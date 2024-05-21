@@ -9,6 +9,9 @@
                         <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.projects.index') }}">Elenco progetti</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}" target="_blank">Go to website</a>
                     </li>
                 </ul>
