@@ -18,7 +18,7 @@ class ProjectsTableSeeder extends Seeder
         foreach ($projects as $project) {
             $new_project = new Project;
 
-            $new_project->name = $project['name'];
+            $new_project->title = $project['title'];
             $new_project->img = $project['img'];
             $new_project->description = $project['description'];
             $new_project->programming_lang = implode(", ", $project['programming_lang']);

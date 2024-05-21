@@ -16,7 +16,7 @@
                 @foreach ($projects as $project)
                     <tr>
                         <th>{{ $project->id }}</th>
-                        <td>{{ $project->name }}</td>
+                        <td>{{ $project->title }}</td>
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->programming_lang }}</td>
                     </tr>
