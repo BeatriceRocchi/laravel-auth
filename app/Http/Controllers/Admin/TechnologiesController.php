@@ -88,8 +88,10 @@ class TechnologiesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Technology $technology)
     {
-        //
+        $technology->delete();
+
+        return redirect()->route('admin.technologies.index')->with('delete_msg', 'The technology ' . $technology->name . ' has been successfully removed from the list');
     }
 }
