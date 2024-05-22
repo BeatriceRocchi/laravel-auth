@@ -25,7 +25,11 @@
 
         @include('admin.partials.aside')
 
-        @yield('content')
+        <div class="overflow-y-scroll flex-grow-1">
+            @yield('content')
+        </div>
+
+
     </main>
 
 

@@ -30,4 +30,25 @@
             }
         }
     }
+
+    .wrapper-tech {
+        margin: 0 auto;
+        width: 60%;
+
+        h3 {
+            color: $color-primary;
+        }
+
+        table {
+            td {
+                width: 200px;
+
+                input {
+                    border: none;
+                    background-color: transparent;
+                    outline: none;
+                }
+            }
+        }
+    }
 }

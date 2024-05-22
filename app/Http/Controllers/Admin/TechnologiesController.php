@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Technology;
+use App\Functions\Helper;
 
 class TechnologiesController extends Controller
 {
@@ -30,7 +31,21 @@ class TechnologiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $exist = Technology::where('name', $request->name)->first();
+
+        if ($exist) {
+            return redirect()->route('admin.technologies.index')->with('error_msg', 'The technology is already included in the list');
+        } else {
+            $input_data = $request->all();
+
+            $input_data['slug'] = Helper::generateSlug($input_data['name'], Technology::class);
+
+            $new_technology = new Technology();
+            $new_technology->fill($input_data);
+            $new_technology->save();
+
+            return redirect()->route('admin.technologies.index')->with('success_msg', 'The technology has been successfully included in the list');
+        }
     }
 
     /**
