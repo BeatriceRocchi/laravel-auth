@@ -9,7 +9,6 @@
                     <th scope="col">Id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Programming languages</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,7 +17,6 @@
                         <th>{{ $project->id }}</th>
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->description }}</td>
-                        <td>{{ $project->programming_lang }}</td>
                     </tr>
                 @endforeach
             </tbody>
