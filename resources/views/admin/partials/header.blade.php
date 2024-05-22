@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-primary-subtle">
+    <nav class="navbar navbar-custom navbar-expand-lg">
         <div class="container-fluid d-flex justify-content-between">
             <div class="collapse navbar-collapse">
 
@@ -17,7 +17,7 @@
 
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn button-custom-primary">
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </button>
                     </form>
