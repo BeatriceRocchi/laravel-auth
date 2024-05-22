@@ -7,7 +7,7 @@
             <li><i class="fa-solid fa-folder-plus"></i><a href="#">Add project</a></li>
             <li><i class="fa-solid fa-wrench"></i><a href="{{ route('admin.technologies.index') }}">Manage
                     technologies</a></li>
-            <li><i class="fa-solid fa-wrench"></i><a href="#">Manage types</a></li>
+            <li><i class="fa-solid fa-wrench"></i><a href="{{ route('admin.types.index') }}">Manage types</a></li>
         </ul>
     </nav>
 </aside>

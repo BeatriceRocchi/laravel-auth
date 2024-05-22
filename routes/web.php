@@ -4,6 +4,7 @@ use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\TechnologiesController;
+use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])->name('home');
         Route::resource('projects', ProjectsController::class);
         Route::resource('technologies', TechnologiesController::class);
+        Route::resource('types', TypesController::class);
     });
 
 // Rotte authentication
