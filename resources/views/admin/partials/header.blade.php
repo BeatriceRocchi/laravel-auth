@@ -6,14 +6,6 @@
                 {{-- Left-side --}}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item d-flex align-items-center me-2">
-                        <i class="fa-solid fa-house"></i>
-                        <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
-                    </li>
-                    <li class="nav-item d-flex align-items-center me-2">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <a class="nav-link" href="{{ route('admin.projects.index') }}">Projects records</a>
-                    </li>
-                    <li class="nav-item d-flex align-items-center me-2">
                         <i class="fa-solid fa-globe"></i>
                         <a class="nav-link" href="{{ route('home') }}" target="_blank">Go to website</a>
                     </li>

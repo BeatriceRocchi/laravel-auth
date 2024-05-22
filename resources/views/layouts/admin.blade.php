@@ -21,7 +21,14 @@
 
     @include('admin.partials.header')
 
-    @yield('content')
+    <main class="main-wrapper d-flex">
+
+        @include('admin.partials.aside')
+
+        @yield('content')
+    </main>
+
+
 
 </body>
 
