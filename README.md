@@ -13,4 +13,5 @@ Creare con Laravel il sistema di gestione del Portfolio di progetti.
 7. In routes, aggiornare le rotte a seconda di quando modificato
 8. In RouteServiceProvider, effettuare il return alla rotta '/admin'
 9. Nel layout admin, includere un header contenente: a) home dashboard admin, b) home sito pubblico, c) nome utente loggato e d) pulsante di logout
-10. Creare un modello Project (con relativa migrazione, seeder, controller e rotte) e stampare la index dei progetti che dovrà essere protetta da middleware
+10. Creare un modello "Project" (con relativa migrazione, seeder, controller e rotte CRUD) e stampare la index dei progetti che dovrà essere protetta da middleware
+11. Aggiungere anche un modello "Technology" ed uno "Type" (con relativa migrazione, seeder, controller e rotte CRUD) ipotizzandone per ciascuna la gestione in un'unica pagina
