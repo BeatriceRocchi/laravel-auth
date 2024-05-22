@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Functions\Helper;
+use App\Http\Requests\TechnologyRequest;
 
 class TechnologiesController extends Controller
 {
@@ -29,7 +30,7 @@ class TechnologiesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TechnologyRequest $request)
     {
         $exist = Technology::where('name', $request->name)->first();
 
@@ -67,9 +68,21 @@ class TechnologiesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TechnologyRequest $request, Technology $technology)
     {
-        //
+        $exist = Technology::where('name', $request->name)->first();
+
+        if ($exist) {
+            return redirect()->route('admin.technologies.index')->with('error_msg', 'The technology is already included in the list');
+        } else {
+            $input_data = $request->all();
+
+            $input_data['slug'] = Helper::generateSlug($input_data['name'], Technology::class);
+
+            $technology->update($input_data);
+
+            return redirect()->route('admin.technologies.index')->with('success_msg', 'The technology has been successfully update');
+        }
     }
 
     /**
