@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center my-4">{{ $title_text }}</h2>
+        <h2>{{ $title_text }}</h2>
 
         <form action="{{ $route }}" class="form-custom" method="POST">
             @csrf

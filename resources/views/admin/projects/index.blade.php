@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="wrapper-projects d-flex flex-column align-items-center">
-            <h2 class="text-center my-4">Projects records</h2>
+            <h2>Projects records</h2>
             <table class="table">
                 <thead class="text-center">
                     <tr>
@@ -24,9 +24,14 @@
                             {{-- TODO: aggiungere thumb immagine al posto di name usato come placeholder --}}
                             <td>
                                 <div class="d-flex">
-                                    <button class="btn btn-success me-2"><i class="fa-solid fa-info"></i></i></button>
-                                    <button class="btn btn-primary me-2"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    <a href="{{ route('admin.projects.show', $project) }}"
+                                        class="btn btn-success btn-link-custom me-2">
+                                        <i class="fa-solid fa-info"></i>
+                                    </a>
+                                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary me-2"><i
+                                            class="fa-solid fa-pen-to-square"></i></a>
+
+                                    @include('admin.partials.delete_form')
                                 </div>
                             </td>
                         </tr>

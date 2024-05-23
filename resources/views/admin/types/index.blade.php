@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="wrapper-tech text-center">
-        <h2 class="my-4">Types list</h2>
+    <div class="wrapper-tech">
+        <h2>Types list</h2>
 
         {{-- Lista errori inserimento/modifica --}}
         @if ($errors->any())
