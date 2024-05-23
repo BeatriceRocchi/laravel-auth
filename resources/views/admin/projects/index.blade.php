@@ -4,7 +4,15 @@
     <div class="container">
         <div class="wrapper-projects d-flex flex-column align-items-center">
             <h2>Projects records</h2>
-            <table class="table">
+
+            {{-- Messaggio di avvenuta eliminazione --}}
+            @if (session('delete_msg'))
+                <div class="alert alert-info" role="alert">
+                    {{ session('delete_msg') }}
+                </div>
+            @endif
+
+            <table class="table table-hover">
                 <thead class="text-center">
                     <tr>
                         <th scope="col">Id</th>

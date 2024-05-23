@@ -46,7 +46,7 @@ class ProjectsController extends Controller
 
         $new_project->save();
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('success_msg', 'The project has been successfully included in the list');
     }
 
     /**
@@ -94,6 +94,6 @@ class ProjectsController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('delete_msg', 'The project ' . $project->title . ' has been successfully removed from the list');
     }
 }
