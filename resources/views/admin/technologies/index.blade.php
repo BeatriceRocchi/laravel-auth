@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="wrapper-tech text-center">
-        <h3 class="my-4">Technologies list</h3>
+        <h2 class="my-4">Technologies list</h2>
 
         {{-- Lista errori inserimento/modifica --}}
         @if ($errors->any())
@@ -42,7 +42,7 @@
 
         <table class="table table-hover">
             <thead class="text-center">
-                <tr class="align-middle">
+                <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Actions</th>
                 </tr>
@@ -50,7 +50,7 @@
             <tbody>
                 @foreach ($technologies as $technology)
                     <tr>
-                        <td class="align-middle">
+                        <td>
                             <form id="form-edit-{{ $technology->id }}"
                                 action="{{ route('admin.technologies.update', $technology) }}" method="POST"
                                 class="m-0">
@@ -60,21 +60,23 @@
                             </form>
                         </td>
 
-                        <td class="d-flex align-items-center justify-content-center">
-                            {{-- Edit button --}}
-                            <button class="btn btn-primary me-2" onclick="submitInput({{ $technology->id }})">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-
-                            {{-- Delete button --}}
-                            <form action="{{ route('admin.technologies.destroy', $technology->id) }}" method="POST"
-                                onsubmit="confirm('Are you sure you want to delete the technology {{ $technology->name }} from the list?')">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger">
-                                    <i class="fa-solid fa-trash"></i>
+                        <td>
+                            <div class="d-flex justify-content-center">
+                                {{-- Edit button --}}
+                                <button class="btn btn-primary me-2" onclick="submitInput({{ $technology->id }})">
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
-                            </form>
+
+                                {{-- Delete button --}}
+                                <form action="{{ route('admin.technologies.destroy', $technology->id) }}" method="POST"
+                                    onsubmit="return confirm('Are you sure you want to delete the technology {{ $technology->name }} from the list?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

@@ -32,14 +32,27 @@
     }
 
     .wrapper-tech {
-        margin: 0 auto;
-        width: 500px;
+        max-width: 500px;
+    }
 
-        h3 {
+    .wrapper-tech,
+    .wrapper-projects {
+        margin: 0 auto;
+        padding: 0 50px;
+
+        h2 {
             color: $color-primary;
         }
 
         table {
+            vertical-align: middle;
+
+            th {
+                background-color: $color-primary;
+                height: 50px;
+                color: white;
+                vertical-align: middle;
+            }
             td {
                 input {
                     border: none;
@@ -53,5 +66,10 @@
                 }
             }
         }
+    }
+
+    .form-custom {
+        margin: 0 auto;
+        max-width: 900px;
     }
 }

@@ -5,14 +5,5 @@ header {
     .navbar-custom {
         height: 100%;
         padding: 0 16px;
-
-        .button-custom-primary {
-            background-color: $color-primary;
-            color: white;
-
-            &:hover {
-                background-color: darken($color-primary, 5%);
-            }
-        }
     }
 }
